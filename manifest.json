@@ -1,25 +1,24 @@
 {
   "name": "WeChrome",
-  "version": "1.0",
+  "version": "2.0.0",
   "description": "Unblock web version of WeChat",
   "permissions": [
-    "activeTab",
-    "webRequest",
-    "webRequestBlocking",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
     "https://wx.qq.com/*",
     "https://web.wechat.com/*",
     "https://wx2.qq.com/*",
     "https://wx8.qq.com/*"
   ],
-
-  "background": {
-    "scripts": ["background.js"]
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
   },
-  "icons": {
-    "16": "images/get_started16.png",
-    "32": "images/get_started32.png",
-    "48": "images/get_started48.png",
-    "128": "images/get_started128.png"
-  },
-  "manifest_version": 2
+  "manifest_version": 3
 }
